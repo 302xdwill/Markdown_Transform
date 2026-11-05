@@ -1,0 +1,7 @@
+Markdown>=3.7.0
+Pygments>=2.18.0
+PyYAML>=6.0.0
+aiohttp>=3.9.0
+Pillow>=10.0.0
+PyInstaller>=6.0.0
+pymupdf>=1.24.0

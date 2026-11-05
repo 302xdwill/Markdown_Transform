@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRODUCTO ACADÉMICO 1 (PA1) — ESTADO DEL ARTE DE LA INVESTIGACIÓN</title>
+  <style>
+/* ==========================================================================
+   ESTILO ACADÉMICO PROFESIONAL — UNIVERSIDAD PERUANA UNIÓN (UPeU)
+   Fidelidad tipográfica y maquetación de entregables de investigación
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-blue: #164e87;
+  --primary-blue-dark: #0f3966;
+  --primary-blue-light: #eff6ff;
+  --text-dark: #1e293b;
+  --text-muted: #64748b;
+  --text-light: #475569;
+  --border-color: #cbd5e1;
+  --border-light: #e2e8f0;
+  --bg-zebra: #f8fafc;
+  --bg-control-zebra: #f4f8fb;
+  --font-main: 'Segoe UI', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI Emoji', sans-serif;
+  --font-mono: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+}
+
+/* ==========================================================================
+   Configuración General y Tipografía
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #f1f5f9;
+  color: var(--text-dark);
+  font-family: var(--font-main);
+  font-size: 9.8pt;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Contenedor tipo Hoja A4 para vista en navegador */
+.document-container {
+  max-width: 210mm;
+  min-height: 297mm;
+  margin: 25px auto 40px auto;
+  background: #ffffff;
+  padding: 22mm 20mm;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
+  position: relative;
+  border-radius: 3px;
+}
+
+/* ==========================================================================
+   Títulos y Encabezados
+   ========================================================================== */
+
+.main-title {
+  color: var(--primary-blue);
+  font-size: 18.5pt;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.25;
+  margin: 0 0 18px 0;
+  letter-spacing: -0.2px;
+  word-spacing: 0.5px;
+}
+
+h1 {
+  color: var(--primary-blue);
+  font-size: 14pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  padding-bottom: 4px;
+  border-bottom: 1.5px solid var(--border-light);
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+h2 {
+  color: #0f172a;
+  font-size: 11pt;
+  font-weight: 700;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+h3 {
+  color: var(--text-dark);
+  font-size: 10pt;
+  font-weight: 600;
+  margin-top: 14px;
+  margin-bottom: 6px;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+h4, h5, h6 {
+  color: var(--text-light);
+  font-size: 9.5pt;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 4px;
+}
+
+p {
+  margin: 0 0 10px 0;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+a {
+  color: #1a56db;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+strong, b {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+em, i {
+  font-style: italic;
+}
+
+/* ==========================================================================
+   Cabecera de Control del Entregable (Tabla de Metadatos)
+   ========================================================================== */
+
+.control-header-section {
+  margin-bottom: 24px;
+}
+
+.control-header-title {
+  color: #0f172a;
+  font-size: 11pt;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+}
+
+.metadata-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-size: 8.8pt;
+  line-height: 1.4;
+}
+
+.metadata-table th {
+  background-color: var(--primary-blue);
+  color: #ffffff;
+  font-weight: 700;
+  text-align: left;
+  padding: 7px 12px;
+  border: 1px solid var(--primary-blue);
+  letter-spacing: 0.2px;
+}
+
+.metadata-table td {
+  padding: 6.5px 12px;
+  border: 1px solid #d2dce8;
+  vertical-align: middle;
+}
+
+.metadata-table td.meta-key,
+.metadata-table td:first-child {
+  font-weight: 700;
+  color: #0f172a;
+  width: 25%;
+  background-color: #ffffff;
+  white-space: nowrap;
+}
+
+.metadata-table td.meta-val,
+.metadata-table td:nth-child(2) {
+  color: #334155;
+  width: 75%;
+}
+
+.metadata-table tr:nth-child(even) td {
+  background-color: var(--bg-control-zebra);
+}
+
+/* ==========================================================================
+   Índice de Contenido
+   ========================================================================== */
+
+.toc-card {
+  margin: 15px 0 25px 0;
+}
+
+.toc-header {
+  border-left: 5px solid var(--primary-blue);
+  padding-left: 12px;
+  margin-bottom: 14px;
+}
+
+.toc-header h2, .toc-header .toc-title {
+  color: var(--primary-blue);
+  font-size: 13.5pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.toc-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.toc-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 3.5px 0;
+  font-size: 9.3pt;
+  line-height: 1.35;
+}
+
+.toc-item.level-1 {
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 6px;
+}
+
+.toc-item.level-2 {
+  padding-left: 18px;
+  color: #334155;
+  font-weight: 400;
+}
+
+.toc-item.level-3 {
+  padding-left: 36px;
+  color: #475569;
+  font-size: 9pt;
+}
+
+.toc-page {
+  color: var(--text-muted);
+  font-weight: 400;
+  font-size: 8.8pt;
+  white-space: nowrap;
+  margin-left: 10px;
+}
+
+/* ==========================================================================
+   Tablas Académicas Generales (Catálogo, Matriz, Comparativas)
+   ========================================================================== */
+
+table:not(.metadata-table) {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0 12px 0;
+  font-size: 8.1pt;
+  line-height: 1.3;
+}
+
+table:not(.metadata-table) thead tr {
+  background-color: var(--primary-blue);
+  color: #ffffff;
+}
+
+table:not(.metadata-table) th {
+  padding: 5.5px 7px;
+  font-weight: 700;
+  border: 1px solid var(--primary-blue);
+  text-align: left;
+  vertical-align: middle;
+}
+
+table:not(.metadata-table) td {
+  padding: 4.5px 6px;
+  border: 1px solid var(--border-color);
+  vertical-align: top;
+  color: var(--text-dark);
+}
+
+table:not(.metadata-table) tbody tr:nth-child(even) td {
+  background-color: var(--bg-zebra);
+}
+
+/* Tablas permiten dividirse entre páginas; encabezados se repiten */
+table {
+  page-break-inside: auto;
+  break-inside: auto;
+}
+
+thead {
+  display: table-header-group;
+}
+
+tbody {
+  display: table-row-group;
+}
+
+/* Filas normales no se parten a la mitad entre páginas; filas extensas (.allow-break) sí fluyen */
+table tr:not(.allow-break) {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+table tr.allow-break {
+  page-break-inside: auto !important;
+  break-inside: auto !important;
+}
+
+/* Primera columna centrada si es numeración */
+table:not(.metadata-table) td:first-child,
+table:not(.metadata-table) th:first-child {
+  text-align: center;
+}
+
+/* ==========================================================================
+   Listas y Elementos Estructurados
+   ========================================================================== */
+
+ul, ol {
+  margin: 4px 0 10px 0;
+  padding-left: 22px;
+}
+
+li {
+  margin-bottom: 3.5px;
+  line-height: 1.45;
+}
+
+ul ul {
+  list-style-type: circle;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+ul ul ul {
+  list-style-type: square;
+}
+
+/* ==========================================================================
+   Etiquetas de Artículos, Badges y Citas
+   ========================================================================== */
+
+.paper-tag, .badge {
+  display: inline-block;
+  background-color: #eff6ff;
+  color: var(--primary-blue);
+  border: 1px solid #bfdbfe;
+  font-weight: 600;
+  padding: 0.5px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  white-space: nowrap;
+}
+
+.badge-success {
+  background-color: #ecfdf5;
+  color: #065f46;
+  border-color: #a7f3d0;
+}
+
+.badge-warning {
+  background-color: #fffbeb;
+  color: #92400e;
+  border-color: #fde68a;
+}
+
+/* ==========================================================================
+   Imágenes y Gráficos
+   ========================================================================== */
+
+.image-container {
+  display: block;
+  text-align: center;
+  margin: 14px 0;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+img {
+  max-width: 90%;
+  max-height: 85mm;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 4px;
+  display: block;
+  margin: 6px auto;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.image-caption {
+  font-size: 8.5pt;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* ==========================================================================
+   Bloques de Código y Citas
+   ========================================================================== */
+
+pre {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid var(--primary-blue);
+  border-radius: 4px;
+  padding: 10px 14px;
+  font-family: var(--font-mono);
+  font-size: 8.5pt;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.45;
+  margin: 10px 0;
+  page-break-inside: auto;
+  break-inside: auto;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background-color: #f1f5f9;
+  padding: 1px 4px;
+  border-radius: 3px;
+  color: #0f172a;
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+blockquote {
+  border-left: 3.5px solid var(--primary-blue);
+  padding: 6px 14px;
+  margin: 10px 0;
+  background-color: #f8fafc;
+  color: #334155;
+  font-style: italic;
+  page-break-inside: auto;
+  break-inside: auto;
+}
+
+/* ==========================================================================
+   Callouts y Alertas Estilo Académico
+   ========================================================================== */
+
+.callout {
+  border-left: 4px solid var(--primary-blue);
+  background-color: #f8fafc;
+  padding: 10px 14px;
+  margin: 12px 0;
+  border-radius: 0 4px 4px 0;
+  page-break-inside: auto;
+  break-inside: auto;
+}
+
+.callout-title {
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: 4px;
+  font-size: 9.5pt;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+.callout.callout-tip {
+  border-left-color: #10b981;
+}
+.callout.callout-warning {
+  border-left-color: #f59e0b;
+}
+.callout.callout-important {
+  border-left-color: #ef4444;
+}
+
+/* ==========================================================================
+   Saltos de Página (Page Breaks)
+   ========================================================================== */
+
+.page-break {
+  page-break-before: always;
+  break-before: page;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.page-break-before {
+  page-break-before: always !important;
+  break-before: page !important;
+  margin-top: 0 !important;
+}
+
+/* ==========================================================================
+   Barra de Acciones Superior en HTML (Sólo en Pantalla)
+   ========================================================================== */
+
+.screen-action-bar {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #cbd5e1;
+  padding: 10px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.screen-action-bar .brand {
+  font-weight: 700;
+  color: var(--primary-blue);
+  font-size: 13pt;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.screen-action-bar .btn-group {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-action {
+  background-color: var(--primary-blue);
+  color: #ffffff;
+  border: none;
+  padding: 7px 15px;
+  border-radius: 4px;
+  font-size: 9pt;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.15s ease;
+}
+
+.btn-action:hover {
+  background-color: var(--primary-blue-dark);
+}
+
+.btn-action.btn-secondary {
+  background-color: #e2e8f0;
+  color: #1e293b;
+}
+
+.btn-action.btn-secondary:hover {
+  background-color: #cbd5e1;
+}
+
+/* ==========================================================================
+   Estilos Específicos para Impresión / Conversión a PDF
+   ========================================================================== */
+
+@page {
+  size: A4 portrait;
+  margin: 20mm 18mm 20mm 18mm;
+}
+
+@media print {
+  html, body {
+    background-color: #ffffff !important;
+    font-size: 9.5pt;
+  }
+
+  .screen-action-bar {
+    display: none !important;
+  }
+
+  .document-container {
+    max-width: 100% !important;
+    min-height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  /* Asegurar fidelidad de colores de fondo en tablas */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  table {
+    page-break-inside: auto !important;
+    break-inside: auto !important;
+  }
+
+  table tr:not(.allow-break) {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  table tr.allow-break {
+    page-break-inside: auto !important;
+    break-inside: auto !important;
+  }
+
+  pre, blockquote, .callout {
+    page-break-inside: auto !important;
+    break-inside: auto !important;
+  }
+
+  h1, h2, h3 {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+
+  .page-break, .page-break-before {
+    page-break-before: always !important;
+    break-before: page !important;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Barra de utilidades en pantalla (oculta automáticamente al imprimir o en PDF) -->
+  <div class="screen-action-bar no-print">
+    <div class="brand">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+        <polyline points="14 2 14 8 20 8"></polyline>
+        <line x1="16" y1="13" x2="8" y2="13"></line>
+        <line x1="16" y1="17" x2="8" y2="17"></line>
+        <polyline points="10 9 9 9 8 9"></polyline>
+      </svg>
+      <span>Visor de Documento Académico</span>
+    </div>
+    <div class="btn-group">
+      <button class="btn-action btn-secondary" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <span>▲ Subir</span>
+      </button>
+      <button class="btn-action" onclick="window.print()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 6 2 18 2 18 9"></polyline>
+          <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+          <rect x="6" y="14" width="12" height="8"></rect>
+        </svg>
+        <span>Imprimir / Exportar PDF</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="document-container">
+        <header class="doc-header">
+      <h1 class="main-title">PRODUCTO ACADÉMICO 1 (PA1) — ESTADO DEL ARTE DE LA INVESTIGACIÓN</h1>
+      <div class="control-header-section">
+        <div class="control-header-title">Cabecera de Control del Entregable</div>
+        <table class="metadata-table">
+          <thead>
+            <tr>
+              <th style="width: 25%;">Metadatos</th>
+              <th style="width: 75%;">Detalle Institucional</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="meta-key">Asignatura:</td>
+              <td class="meta-val">Investigación III (Ciclo 8 – Semestre 2026-2)</td>
+            </tr>
+            <tr>
+              <td class="meta-key">Evaluación:</td>
+              <td class="meta-val">Producto Académico 1 (PA1 — 15%) / Cierre de Unidad 1</td>
+            </tr>
+            <tr>
+              <td class="meta-key">Tema del Proyecto:</td>
+              <td class="meta-val">Sistema Inteligente para la Prevención Temprana de Deuda Técnica en la Fase de Planificación (Shift-Left) en Equipos Ágiles Pequeños</td>
+            </tr>
+            <tr>
+              <td class="meta-key">Equipo Investigador:</td>
+              <td class="meta-val">William David Ortiz Mamani & Uhziel Elí Condori Rojas</td>
+            </tr>
+            <tr>
+              <td class="meta-key">Docente Asesor:</td>
+              <td class="meta-val">Mg. Fredy Abel Huanca Torres</td>
+            </tr>
+            <tr>
+              <td class="meta-key">Institución:</td>
+              <td class="meta-val">Universidad Peruana Unión (UPeU) — Escuela Profesional de Ingeniería de Sistemas</td>
+            </tr>
+            <tr>
+              <td class="meta-key">Fecha de Entrega:</td>
+              <td class="meta-val">2026-09-06</td>
+            </tr>
+            <tr>
+              <td class="meta-key">Estado:</td>
+              <td class="meta-val">🟢 Completado / Listo para Revisión y Entrega Final</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </header>
+
+    <!-- Contenido Principal Renderizado desde Markdown -->
+    <main class="doc-body">
+      <div class="toc-card page-break-before">
+  <div class="toc-header">
+    <div class="toc-title">ÍNDICE DE CONTENIDO</div>
+  </div>
+  <div class="toc-list">
+    <div class="toc-item level-1">
+      <span>Actividad 1: Plantilla de Análisis y Catalogación de Papers</span>
+      <span class="toc-page">pág. 3</span>
+    </div>
+    <div class="toc-item level-2">
+      <span>- 1. Descripción e Instrucciones</span>
+      <span class="toc-page">pág. 3</span>
+    </div>
+    <div class="toc-item level-2">
+      <span>- 2. Tabla de Catalogación de los 10 Papers</span>
+      <span class="toc-page">pág. 3</span>
+    </div>
+    <div class="toc-item level-2">
+      <span>- 3. Fuentes de Verificación Oficial de Cuartiles</span>
+      <span class="toc-page">pág. 5</span>
+    </div>
+
+    <div class="toc-item level-1">
+      <span>Actividad 2: Mapa Genealógico del Tema (Árbol de Literatura)</span>
+      <span class="toc-page">pág. 6</span>
+    </div>
+    <div class="toc-item level-2">
+      <span>- 1. Ficha Técnica de Generación</span>
+      <span class="toc-page">pág. 6</span>
+    </div>
+    <div class="toc-item level-2">
+      <span>- 2. Representación Visual del Mapa Genealógico</span>
+      <span class="toc-page">pág. 6</span>
+    </div>
+    <div class="toc-item level-2">
+      <span>- 3. Párrafo Interpretativo del Mapa Genealógico (224 palabras)</span>
+      <span class="toc-page">pág. 6</span>
+    </div>
+
+    <div class="toc-item level-1">
+      <span>Actividad 3: Matriz de Síntesis y Análisis de Brechas (Gaps)</span>
+      <span class="toc-page">pág. 8</span>
+    </div>
+    <div class="toc-item level-2">
+      <span>- 1. Descripción e Instrucciones</span>
+      <span class="toc-page">pág. 8</span>
+    </div>
+    <div class="toc-item level-2">
+      <span>- 2. Matriz de Síntesis Comparativa (7 Dimensiones)</span>
+      <span class="toc-page">pág. 8</span>
+    </div>
+    <div class="toc-item level-2">
+      <span>- 3. Análisis de Síntesis y Brechas Metodológicas (268 palabras)</span>
+      <span class="toc-page">pág. 13</span>
+    </div>
+
+    <div class="toc-item level-1">
+      <span>Actividad 4: Fichas de Análisis de Papers Seminales (Fundacionales)</span>
+      <span class="toc-page">pág. 15</span>
+    </div>
+    <div class="toc-item level-2">
+      <span>- 1. Criterios de Selección y Fundamentación Metodológica</span>
+      <span class="toc-page">pág. 15</span>
+    </div>
+    <div class="toc-item level-2">
+      <span>- 2. Fichas Estructuradas de Papers Seminales</span>
+      <span class="toc-page">pág. 15</span>
+    </div>
+    <div class="toc-item level-3">
+      <span>- Ficha de Paper Seminal #1: Fundamento del Dominio (Deuda Técnica)</span>
+      <span class="toc-page">pág. 15</span>
+    </div>
+    <div class="toc-item level-3">
+      <span>- Ficha de Paper Seminal #2: Fundamento Tecnológico (LLMs Aplicados a Código)</span>
+      <span class="toc-page">pág. 16</span>
+    </div>
+  </div>
+</div>
+
+<h1 class="page-break-before">ACTIVIDAD 1: PLANTILLA DE ANÁLISIS Y CATALOGACIÓN DE PAPERS</h1>
+<h2>1. Descripción e Instrucciones</h2>
+<p>Catalogación y evaluación académica de <strong>10 artículos científicos</strong> de la investigación publicados en el periodo 2021–2026, identificando el tipo de investigación, el venue de publicación, su ranking de calidad verificado en fuentes oficiales (<a href="https://www.scimagojr.com">Scimago SJR</a> y <a href="http://portal.core.edu.au">CORE Portal</a>), y la justificación específica de impacto y rigor.</p>
+<h2>2. Tabla de Catalogación de los 10 Papers</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">N°</th>
+<th style="text-align: left;">Paper (Título Completo y Año)</th>
+<th style="text-align: left;">Tipo de Investigación</th>
+<th style="text-align: left;">Venue (Revista / Conferencia)</th>
+<th style="text-align: center;">Ranking Oficial</th>
+<th style="text-align: left;">¿Por qué ese Venue? (Justificación de Impacto y Rigor)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="allow-break">
+<td style="text-align: center;"><strong>01</strong></td>
+<td style="text-align: left;">“A Large-Scale Empirical Evaluation of LLMs for Automated Self-Admitted Technical Debt Repayment” — <em>Sheikhaei et al., 2026</em></td>
+<td style="text-align: left;">Empírica / Experimental</td>
+<td style="text-align: left;"><strong>ACM Transactions on Software Engineering and Methodology (TOSEM)</strong></td>
+<td style="text-align: center;"><strong>Scimago SJR Q1</strong></td>
+<td style="text-align: left;">Es una de las revistas insignia (<em>flagship journal</em>) de mayor prestigio e impacto global de la ACM en ingeniería de software, con un proceso de revisión por pares doble ciego de máximo rigor técnico.</td>
+</tr>
+<tr class="allow-break">
+<td style="text-align: center;"><strong>02</strong></td>
+<td style="text-align: left;">“REARRANGE: Effort estimation approach for software clustering-based remodularisation” — <em>Tan et al., 2024</em></td>
+<td style="text-align: left;">Aplicada / Experimental</td>
+<td style="text-align: left;"><strong>Information and Software Technology (IST, Elsevier)</strong></td>
+<td style="text-align: center;"><strong>Scimago SJR Q1</strong></td>
+<td style="text-align: left;">Revista líder en ingeniería de software empírica y evolución de sistemas con alto factor de impacto, especializada en la aplicación de Machine Learning para optimización arquitectónica.</td>
+</tr>
+<tr class="allow-break">
+<td style="text-align: center;"><strong>03</strong></td>
+<td style="text-align: left;">“Technical debt in AI-enabled systems: On the prevalence, severity, impact, and management strategies for code and architecture” — <em>Recupito et al., 2024</em></td>
+<td style="text-align: left;">Empírica / Estudio de Campo</td>
+<td style="text-align: left;"><strong>Journal of Systems and Software (JSS, Elsevier)</strong></td>
+<td style="text-align: center;"><strong>Scimago SJR Q1</strong></td>
+<td style="text-align: left;">Principal foro internacional para la investigación en arquitectura y calidad de software, con una audiencia especializada en la gestión de deuda técnica en la industria.</td>
+</tr>
+<tr class="allow-break">
+<td style="text-align: center;"><strong>04</strong></td>
+<td style="text-align: left;">“BEACon-TD: Classifying Technical Debt and its types across diverse software projects issues using transformers” — <em>Shivashankar et al., 2025</em></td>
+<td style="text-align: left;">Aplicada / Experimental</td>
+<td style="text-align: left;"><strong>Journal of Systems and Software (JSS, Elsevier)</strong></td>
+<td style="text-align: center;"><strong>Scimago SJR Q1</strong></td>
+<td style="text-align: left;">Publicación de referencia Q1 en ciencias de la computación que valida formalmente modelos de Procesamiento del Lenguaje Natural y Transformers aplicados a repositorios de software.</td>
+</tr>
+<tr class="allow-break">
+<td style="text-align: center;"><strong>05</strong></td>
+<td style="text-align: left;">“A comparative evaluation of ChatGPT-4o and DeepSeek-R1 for AI-generated code quality using software engineering metrics” — <em>Almanasra et al., 2026</em></td>
+<td style="text-align: left;">Empírica / Experimental</td>
+<td style="text-align: left;"><strong>Array (Elsevier)</strong></td>
+<td style="text-align: center;"><strong>Scimago SJR Q1</strong></td>
+<td style="text-align: left;">Revista de acceso abierto de Elsevier indexada en Scopus (SJR 1.264, H-Index 33), especializada en la diseminación rigurosa de benchmarks sobre modelos de IA de frontera (ChatGPT-4o vs. DeepSeek-R1).</td>
+</tr>
+<tr class="allow-break">
+<td style="text-align: center;"><strong>06</strong></td>
+<td style="text-align: left;">“Causal mapping of the risks of using generative AI in software development” — <em>Hein et al., 2026</em></td>
+<td style="text-align: left;">Cualitativa / Estudio Multicaso Longitudinal</td>
+<td style="text-align: left;"><strong>Information and Software Technology (IST, Elsevier)</strong></td>
+<td style="text-align: center;"><strong>Scimago SJR Q1</strong></td>
+<td style="text-align: left;">Foro de máximo reconocimiento para investigaciones sociotécnicas y cualitativas de alto rigor metodológico sobre la adopción de procesos y tecnologías en equipos ágiles.</td>
+</tr>
+<tr class="allow-break">
+<td style="text-align: center;"><strong>07</strong></td>
+<td style="text-align: left;">“AST-guided transformers for sustainable and reliable UML modeling” — <em>Alaswad et al., 2026</em></td>
+<td style="text-align: left;">Aplicada / Experimental</td>
+<td style="text-align: left;"><strong>Machine Learning with Applications (Elsevier)</strong></td>
+<td style="text-align: center;"><strong>Scimago SJR Q1</strong></td>
+<td style="text-align: left;">Revista especializada en arquitecturas neuronales aplicadas a problemas prácticos de ingeniería, con estricto énfasis en la reproducibilidad técnica y liberación abierta de código y datasets.</td>
+</tr>
+<tr class="allow-break">
+<td style="text-align: center;"><strong>08</strong></td>
+<td style="text-align: left;">“Binary and multi-class classification of Self-Admitted Technical Debt: How far can we go?” — <em>Arcelli Fontana et al., 2025</em></td>
+<td style="text-align: left;">Aplicada / Experimental</td>
+<td style="text-align: left;"><strong>Information and Software Technology (IST, Elsevier)</strong></td>
+<td style="text-align: center;"><strong>Scimago SJR Q1</strong></td>
+<td style="text-align: left;">Publicación de élite en minería de repositorios de software y detección de deuda técnica, pionera en la validación empírica de clasificadores de Machine Learning en benchmarks estándar.</td>
+</tr>
+<tr class="allow-break">
+<td style="text-align: center;"><strong>09</strong></td>
+<td style="text-align: left;">“Beyond the hype: Enabling informed LLM adoption in industry through systematic evaluation” — <em>Pizarro et al., 2026</em></td>
+<td style="text-align: left;">Empírica / Estudio Longitudinal Industrial</td>
+<td style="text-align: left;"><strong>Science of Computer Programming (Elsevier)</strong></td>
+<td style="text-align: center;"><strong>Scimago SJR Q2</strong></td>
+<td style="text-align: left;">Revista histórica en ciencias de la computación que publica metodologías formales, herramientas de evaluación de código y marcos rigurosos de calidad de software como GQM.</td>
+</tr>
+<tr class="allow-break">
+<td style="text-align: center;"><strong>10</strong></td>
+<td style="text-align: left;">“Assisting early-stage software startups with LLMs: Effective prompt engineering and system instruction design” — <em>Ahlgren et al., 2025</em></td>
+<td style="text-align: left;">Design Science Research (DSR)</td>
+<td style="text-align: left;"><strong>Information and Software Technology (IST, Elsevier)</strong></td>
+<td style="text-align: center;"><strong>Scimago SJR Q1</strong></td>
+<td style="text-align: left;">Foro preferente para estudios basados en Design Science Research orientados a startups y metodologías ágiles, garantizando la relevancia práctica y el rigor de diseño en ingeniería de software.</td>
+</tr>
+</tbody>
+</table>
+<h2>3. Fuentes de Verificación Oficial de Cuartiles</h2>
+<ul>
+<li><strong>Scimago Journal &amp; Country Rank (SJR):</strong></li>
+<li><em>ACM TOSEM</em>: SJR Q1 (ISSN: 1049-331X)</li>
+<li><em>Information and Software Technology (IST)</em>: SJR Q1 (ISSN: 0950-5849)</li>
+<li><em>Journal of Systems and Software (JSS)</em>: SJR Q1 (ISSN: 0164-1212)</li>
+<li><em>Array</em>: SJR Q1 (ISSN: 2590-0056)</li>
+<li><em>Machine Learning with Applications</em>: SJR Q1 (ISSN: 2666-8270)</li>
+<li><em>Science of Computer Programming</em>: SJR Q2 (ISSN: 0167-6423)</li>
+</ul>
+<h1 class="page-break-before">ACTIVIDAD 2: MAPA GENEALÓGICO DEL TEMA (ÁRBOL DE LITERATURA)</h1>
+<h2>1. Ficha Técnica de Generación</h2>
+<ul>
+<li><strong>Herramienta Digital Utilizada:</strong> Litmaps (<a href="https://app.litmaps.com">https://app.litmaps.com</a>)</li>
+<li><strong>Artículo Semilla de Exploración:</strong> “A Large-Scale Empirical Evaluation of LLMs for Automated Self-Admitted Technical Debt Repayment” (<em>Sheikhaei et al., 2026</em> — <span class="paper-tag">[P01]</span>)</li>
+<li><strong>Fecha de Generación:</strong> 2026-09-06</li>
+<li><strong>Dimensiones del Grafo:</strong></li>
+<li><strong>Eje Horizontal (X):</strong> Línea Temporal de Publicación (<em>Timeline: 1992 → 2026</em>).</li>
+<li><strong>Eje Vertical (Y):</strong> Impacto y Volumen de Citaciones Acumuladas (<em>More Citations</em>).</li>
+<li><strong>Número de Nodos Conectados:</strong> 18 artículos científicos interconectados mediante relaciones de citación directa y sucesión metodológica.</li>
+</ul>
+<h2>2. Representación Visual del Mapa Genealógico</h2>
+<p><img alt="Mapa Genealógico Litmaps" src="data:image/png;base64,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" /></p>
+<h2>3. Párrafo Interpretativo del Mapa Genealógico (224 palabras)</h2>
+<p>El mapa genealógico generado en Litmaps reconstruye la evolución histórica del conocimiento en torno a la gestión y prevención de la deuda técnica mediante inteligencia artificial a lo largo de tres décadas (1992–2026). El grafo evidencia una <strong>fundación seminal dual</strong>: por un lado, en el extremo izquierdo se ubica el nodo raíz fundacional de <strong>Cunningham (1992)</strong> (<em>“The WyCash Portfolio Management System”</em>, 1.2k citas), quien acuñó la metáfora de la deuda técnica en el desarrollo de software; por otro lado, en la cúspide de citaciones emerge el seminal de <strong>Chen et al. (2021)</strong> (<em>“Evaluating Large Language Models Trained on Code”</em>, con más de 14.2k citas) junto con Austin et al. (2021) (5.4k citas), que inauguraron la era moderna de los modelos de lenguaje (Codex/LLMs) aplicados a la síntesis y análisis de código.</p>
+<p>A partir de estos dos pilares, el árbol genealógico se ramifica en dos vertientes metodológicas: 1. <strong>La rama de minería y aprendizaje automático tradicional de SATD</strong>, orientada a la detección heurística y patrones de remoción en código (<em>Zampetti et al., 2020; Guo et al., 2021; Pinna et al., 2023; Sutoyo et al., 2023/2026</em>). 2. <strong>La rama de métricas semánticas y modelos generativos para código</strong>, que integra métricas de evaluación de similitud como CrystalBLEU (<em>Eghbali, 2022</em>) y marcos de ingeniería de prompts (<em>Chen, 2023</em>).</p>
+<p>La convergencia de ambas ramas conforma la <strong>frontera actual del conocimiento (2024–2026)</strong>, ubicada en la zona inferior derecha del mapa. En este sector reciente destacan los trabajos de Mastropaolo et al. (2023), Simon et al. (2026) y de manera central <strong>Sheikhaei et al. (2026)</strong> (<span class="paper-tag">[P01]</span>), los cuales trasladan el foco desde la simple detección reactiva hacia la <strong>remediación automatizada y prevención temprana (Shift-Left)</strong> de la deuda técnica mediante Grandes Modelos de Lenguaje.</p>
+<h1 class="page-break-before">ACTIVIDAD 3: MATRIZ DE SÍNTESIS Y ANÁLISIS DE BRECHAS (GAPS)</h1>
+<h2>1. Descripción e Instrucciones</h2>
+<p>Construir una matriz comparativa exhaustiva que permita identificar patrones, metodologías y brechas (<em>gaps</em>) en la literatura científica analizando los <strong>10 artículos primarios</strong> bajo 7 dimensiones clave, complementada por un análisis de síntesis formal ($\ge$ 150 palabras) que vincule los vacíos detectados con la propuesta de investigación propia.</p>
+<h2>2. Matriz de Síntesis Comparativa (7 Dimensiones)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Autor / Año</th>
+<th style="text-align: left;">Problema Específico Abordado</th>
+<th style="text-align: left;">Método / Técnica Propuesta</th>
+<th style="text-align: left;">Dataset Utilizado (Nombre y Tamaño)</th>
+<th style="text-align: left;">Métrica de Evaluación</th>
+<th style="text-align: left;">Limitaciones Reconocidas por los Autores</th>
+<th style="text-align: left;">Gap / Vacío de Investigación Dejado Abierto</th>
+</tr>
+</thead>
+<tbody>
+<tr class="allow-break">
+<td style="text-align: left;"><strong>Sheikhaei et al., 2026</strong> (<span class="paper-tag">[P01]</span>)</td>
+<td style="text-align: left;">Automatizar la resolución y amortización de Self-Admitted Technical Debt (SATD) en código fuente mediante LLMs.</td>
+<td style="text-align: left;">Fine-tuning de SLMs (<em>Gemma-2-9B, CodeT5+</em>) y prompting zero-shot con CoT en LLMs (<em>Llama-3.1-70B, GPT-4o-mini</em>).</td>
+<td style="text-align: left;">156,069 pares de commit de GitHub Archive (58,722 Python y 97,347 Java).</td>
+<td style="text-align: left;">LEMOD (<em>Line-Level Exact Match on Diff</em>), BLEU-diff, CrystalBLEU-diff y Exact Match.</td>
+<td style="text-align: left;">Tasa de éxito baja (8%–10%); 94% de fallos se debe a falta de contexto del proyecto y 66% a ambigüedad del mensaje.</td>
+<td style="text-align: left;">Los LLMs fallan al operar aisladamente; se requiere inyección de contexto arquitectónico y validación temprana guiada (<em>Shift-Left</em>).</td>
+</tr>
+<tr class="allow-break">
+<td style="text-align: left;"><strong>Tan et al., 2024</strong> (<span class="paper-tag">[P02]</span>)</td>
+<td style="text-align: left;">Resistencia de desarrolladores a ejecutar refactorizaciones arquitectónicas en sprints ágiles por incertidumbre en los tiempos.</td>
+<td style="text-align: left;">Framework <strong>REARRANGE</strong> basado en AutoML (<em>Stacked Ensembles, Random Forest, GBM</em>) sobre métricas de acoplamiento y dependencias.</td>
+<td style="text-align: left;">25 proyectos Java de código abierto (8,223 refactorizaciones históricas de <em>RefactoringMiner</em>).</td>
+<td style="text-align: left;">Mean Absolute Error (MAE: 5.47 h vs. 453.31 h baseline), RMSE y $R^2$ (0.538).</td>
+<td style="text-align: left;">Modela únicamente el esfuerzo de codificación directa, omitiendo pruebas de integración complejas y calibración para programadores novatos.</td>
+<td style="text-align: left;">Falta integrar la estimación de esfuerzo arquitectónico dentro de las ceremonias de planificación ágil (<em>sprint planning</em>) con asistentes de diseño.</td>
+</tr>
+<tr class="allow-break">
+<td style="text-align: left;"><strong>Recupito et al., 2024</strong> (<span class="paper-tag">[P03]</span>)</td>
+<td style="text-align: left;">Falta de caracterización de la severidad, prevalencia e impacto de 9 patrones de Deuda Técnica inducida por IA (AITD) en arquitectura y código.</td>
+<td style="text-align: left;">Estudio empírico por encuesta basado en viñetas experimentales y análisis temático cualitativo (<em>Kitchenham &amp; Pfleeger</em>).</td>
+<td style="text-align: left;">53 practicantes e ingenieros de software de la industria global (77% en equipos pequeños &lt; 10 miembros).</td>
+<td style="text-align: left;">Escalas de Likert de 5 puntos, distribuciones porcentuales y matrices de severidad en 6 atributos ISO 25010.</td>
+<td style="text-align: left;">Muestra basada en percepción de practicantes sin instrumentación directa en repositorios; riesgo de sesgo de autoevaluación.</td>
+<td style="text-align: left;">El 94% de los equipos carece de herramientas automatizadas para gestionar deuda de IA y depende de revisiones manuales costosas; ausencia de guardrails en diseño.</td>
+</tr>
+<tr class="allow-break">
+<td style="text-align: left;"><strong>Shivashankar et al., 2025</strong> (<span class="paper-tag">[P04]</span>)</td>
+<td style="text-align: left;">Infiltración silenciosa de deuda técnica no documentada desde el backlog de incidencias (<em>tickets/issues</em>) hacia el código fuente.</td>
+<td style="text-align: left;">Framework <strong>BEACon-TD</strong> basado en ensambles de Transformers compactos (<em>DistilRoBERTa</em>) con in-project fine-tuning para 13 tipos de TD.</td>
+<td style="text-align: left;">Cientos de miles de incidencias de GitHub Archive (2015–2024) y datos industriales de <em>Visma Software International</em>.</td>
+<td style="text-align: left;">F1-Score (0.892), Precision (0.911), Recall (0.874), MCC (0.789) y AUC-ROC (0.949).</td>
+<td style="text-align: left;">Enfocado en repositorios en inglés; requiere reentrenamiento adaptativo si cambia el vocabulario del dominio del proyecto.</td>
+<td style="text-align: left;">Clasifica la deuda una vez registrada en el ticket, pero no asiste proactivamente en la redacción y refinamiento de historias de usuario para prevenirla.</td>
+</tr>
+<tr class="allow-break">
+<td style="text-align: left;"><strong>Almanasra et al., 2026</strong> (<span class="paper-tag">[P05]</span>)</td>
+<td style="text-align: left;">Generación masiva de código por LLMs que introduce pasivos ocultos de mantenibilidad, falta de manejo de errores y documentación.</td>
+<td style="text-align: left;">Benchmark comparativo multidimensional entre ChatGPT-4o y DeepSeek-R1 bajo 5 dimensiones de ISO/IEC 25010.</td>
+<td style="text-align: left;">600 problemas de desarrollo de software (2,400 muestras en Java y Python) evaluados con SonarQube, PMD y PyLint.</td>
+<td style="text-align: left;">Puntuación por dimensión (1-10), tasa de corrección funcional (%), medias y desviaciones estándar.</td>
+<td style="text-align: left;">Benchmark sintético de funciones aisladas que no evalúa arquitecturas multifile ni entornos de integración continua complejos.</td>
+<td style="text-align: left;">Los LLMs generalistas presentan 41% de omisiones en manejo de excepciones y 59% en documentación; necesidad de gatekeepers estáticos antes de aceptar código de IA.</td>
+</tr>
+<tr class="allow-break">
+<td style="text-align: left;"><strong>Hein et al., 2026</strong> (<span class="paper-tag">[P06]</span>)</td>
+<td style="text-align: left;">Desconocimiento de las cadenas causales que originan los riesgos sociotécnicos y la deuda técnica al adoptar IA generativa en desarrollo.</td>
+<td style="text-align: left;">Investigación cualitativa multicaso longitudinal (diseño Runeson) en 3 empresas y modelado de grafos causales (<em>Causal Mapping</em>).</td>
+<td style="text-align: left;">15 entrevistas en profundidad a desarrolladores/líderes técnicos con seguimiento longitudinal de 1 año (banca, seguros y logística).</td>
+<td style="text-align: left;">Mapeo topológico de causalidad (nodos raíz, encadenados y terminales) y verificación longitudinal por <em>member checking</em>.</td>
+<td style="text-align: left;">Contexto circunscrito a organizaciones danesas con diferente madurez ágil; no provee métricas computacionales directas de código.</td>
+<td style="text-align: left;">Identifica el bucle de validación insuficiente por brecha de competencias (<em>Lacking AI competencies</em>); falta un protocolo formal de interacción en planificación.</td>
+</tr>
+<tr class="allow-break">
+<td style="text-align: left;"><strong>Alaswad et al., 2026</strong> (<span class="paper-tag">[P07]</span>)</td>
+<td style="text-align: left;">Inconsistencias y ambigüedades en la conversión manual de requisitos en lenguaje natural a modelos de diseño UML, generando deuda arquitectónica.</td>
+<td style="text-align: left;">Marco <strong>Seq2AST</strong> basado en Transformers (<em>CodeT5-small de 60M parámetros</em>) con restricciones sintácticas y aprendizaje multitarea.</td>
+<td style="text-align: left;">Benchmark <em>PlantUCD</em> con miles de pares de requisitos y diagramas PlantUML anotados.</td>
+<td style="text-align: left;">F1-Score macro (89.20%), Precision, Recall, completitud estructural y acuerdo de Fleiss' Kappa (0.78).</td>
+<td style="text-align: left;">Enfocado en diagramas de clases y secuencias básicos en inglés; no abarca especificaciones arquitectónicas distribuidas ni microservicios.</td>
+<td style="text-align: left;">Genera diagramas UML aislados pero no produce el andamiaje (<em>scaffold</em>) físico de carpetas y contratos de API ejecutables requeridos por squads ágiles.</td>
+</tr>
+<tr class="allow-break">
+<td style="text-align: left;"><strong>Arcelli Fontana et al., 2025</strong> (<span class="paper-tag">[P08]</span>)</td>
+<td style="text-align: left;">Incapacidad de clasificadores tradicionales para discriminar subtipos de deuda técnica debido al severo desbalance de clases (&lt;7% de deuda).</td>
+<td style="text-align: left;">Framework <strong>SALA</strong> (<em>SATD detector on LLMs</em>) con LLaMA-2 y plantillas de prompt engineering para clasificación binaria y multiclase (5 tipos).</td>
+<td style="text-align: left;">Benchmark estándar de Maldonado et al. (62,775 comentarios de 10 proyectos Java de código abierto).</td>
+<td style="text-align: left;">F1-Score (0.912 en binario; $\approx$ 1.000 en multiclase), Precision, Recall y Accuracy (0.988).</td>
+<td style="text-align: left;">Limitado a comentarios a nivel de código fuente en Java; no analiza especificaciones de requerimientos tempranos ni persistencia.</td>
+<td style="text-align: left;">Detecta la deuda una vez admitida en el código fuente (<em>post-mortem</em>), confirmando la necesidad de trasladar la detección hacia la fase de especificación (<em>Shift-Left</em>).</td>
+</tr>
+<tr class="allow-break">
+<td style="text-align: left;"><strong>Pizarro et al., 2026</strong> (<span class="paper-tag">[P09]</span>)</td>
+<td style="text-align: left;">Regresiones silenciosas y degradación de calidad no monótona en código y pruebas generadas por LLMs comerciales en entornos continuos.</td>
+<td style="text-align: left;">Estudio longitudinal industrial de 20 meses en LKS Next aplicando <em>Goal-Question-Metric</em> (GQM) adaptado a LLMs y la herramienta <em>Tetrics</em>.</td>
+<td style="text-align: left;">6 ciclos de evaluación en 7 funciones Java empresariales evaluando 11 LLMs comerciales (OpenAI, Anthropic, Google).</td>
+<td style="text-align: left;">Índice de calidad ponderado (SonarQube, compilación, JaCoCo) y evaluación de partición de equivalencia.</td>
+<td style="text-align: left;">Contexto específico de pruebas unitarias en Java en una empresa mediana; costos de invocación continua de APIs propietarias.</td>
+<td style="text-align: left;">Demuestra que las herramientas comerciales genéricas (<code>/test</code>) fallan frecuentemente; se requiere ingeniería de prompts estructurada como activo versionado en el squad.</td>
+</tr>
+<tr class="allow-break">
+<td style="text-align: left;"><strong>Ahlgren et al., 2025</strong> (<span class="paper-tag">[P10]</span>)</td>
+<td style="text-align: left;">Altas tasas de acumulación de deuda técnica y fallos tempranos en startups de software ágil debido a inexperiencia técnica y falta de séniors.</td>
+<td style="text-align: left;">Design Science Research (DSR / 3 ciclos) desarrollando el asistente <strong>StartupGPT</strong> con patrones de prompt engineering (<em>Flipped Interaction</em>).</td>
+<td style="text-align: left;">Evaluación con 25 fundadores y directores técnicos de startups de software (&lt;10 miembros) en ecosistemas escandinavos.</td>
+<td style="text-align: left;">Métricas ISO 9241-11: Satisfacción (93.33%), Efectividad (80%), Eficiencia (80%), Confiabilidad (86.67%) y framework 3C.</td>
+<td style="text-align: left;">Artefacto probado como prototipo experimental interactivo; no integrado de forma nativa en linters de CI/CD ni IDEs de desarrollo.</td>
+<td style="text-align: left;">Demuestra que los LLMs tienden a ser complacientes (<em>tend to please</em>); se requiere un motor de planificación dialógica que interrogue al equipo antes de codificar.</td>
+</tr>
+</tbody>
+</table>
+<h2>3. Análisis de Síntesis y Brechas Metodológicas (268 palabras)</h2>
+<p>El análisis comparativo de la matriz de síntesis revela <strong>dos patrones metodológicos dominantes</strong> en el estado del arte reciente (2024–2026): 1. <strong>La transición desde modelos heurísticos hacia arquitecturas basadas en Transformers y LLMs</strong>, observándose una bifurcación clara entre el uso de modelos compactos especializados (<em>DistilRoBERTa, CodeT5</em>, evaluados en <span class="paper-tag">[P04]</span> y <span class="paper-tag">[P07]</span>) para tareas deterministas con restricciones sintácticas, y el empleo de grandes modelos generativos (<em>Llama-3.1, GPT-4o, DeepSeek-R1</em>, en <span class="paper-tag">[P01]</span>, <span class="paper-tag">[P05]</span>, <span class="paper-tag">[P08]</span>, <span class="paper-tag">[P09]</span>) para clasificación multiclase y síntesis de código. 2. <strong>La incorporación creciente de marcos de calidad formal (ISO/IEC 25010, GQM)</strong> y analizadores estáticos estándar (<em>SonarQube, RefactoringMiner</em>) para auditar objetivamente el impacto del software generado o asistido por IA.</p>
+<p>A pesar de estos avances, emerge un <strong>gap o vacío metodológico recurrente y crítico</strong>: la inmensa mayoría de las herramientas actuales operan de manera reactiva o post-mortem (detectando o intentando amortizar la deuda técnica una vez que el código fuente ya ha sido escrito, con tasas de fallo de hasta el 91.9% debido a la falta de contexto del proyecto, como demuestran <span class="paper-tag">[P01]</span> y <span class="paper-tag">[P03]</span>), o actúan como cajas negras complacientes sin cuestionar las decisiones tempranas de diseño (<span class="paper-tag">[P06]</span>, <span class="paper-tag">[P10]</span>). Prácticamente ningún trabajo integra un marco proactivo que opere en la <strong>fase de planificación y diseño previo (Shift-Left)</strong>.</p>
+<p>Este vacío recurrente justifica y fundamenta directamente nuestra propuesta de investigación: el desarrollo de un <strong>framework dialógico asistido por IA (IA ➔ Skills ➔ Hablar ➔ Actuar)</strong> que guíe socráticamente a equipos ágiles pequeños en el refinamiento de requisitos BDD, genere andamiajes arquitectónicos limpios y aplique guardrails estáticos antes de emitir la primera línea de código, garantizando un estándar de cero deuda técnica residual en proyectos Greenfield.</p>
+<h1 class="page-break-before">ACTIVIDAD 4: FICHAS DE ANÁLISIS DE PAPERS SEMINALES (FUNDACIONALES)</h1>
+<h2>1. Criterios de Selección y Fundamentación Metodológica</h2>
+<p>Para la presente investigación sobre la prevención y gestión de la Deuda Técnica asistida por Inteligencia Artificial en equipos ágiles, se han seleccionado dos artículos seminales de impacto histórico global:</p>
+<ol>
+<li><strong>Paper Seminal de Dominio (Deuda Técnica):</strong> Ward Cunningham (1992), quien originó la metáfora canónica y sentó las bases conceptuales de la disciplina.</li>
+<li><strong>Paper Seminal Tecnológico (LLMs para Código):</strong> Mark Chen et al. (2021) / OpenAI Codex, que inauguró la era contemporánea del uso de modelos de lenguaje autorregresivos aplicados a la síntesis y evaluación de software.</li>
+</ol>
+<p>Ambos artículos cumplen rigurosamente con los criterios de la guía académica: superan holgadamente las 500 citaciones (&gt;1.2k y &gt;14.2k respectivamente), figuran en la bibliografía raíz de los 10 artículos primarios analizados en la Actividad 1 y estructuran las dos ramas principales del mapa genealógico de la Actividad 2.</p>
+<h2>2. Fichas Estructuradas de Papers Seminales</h2>
+<h3>Ficha de Paper Seminal #1: Fundamento del Dominio (Deuda Técnica)</h3>
+<ul>
+<li><strong>Referencia Completa (Formato IEEE):</strong><br />
+  W. Cunningham, "The WyCash portfolio management system," in <em>Addendum to the Proceedings on Object-Oriented Programming Systems, Languages, and Applications (OOPSLA '92)</em>, Vancouver, BC, Canada: ACM, 1992, pp. 29–30. doi: <a href="https://doi.org/10.1145/157709.157715">10.1145/157709.157715</a>.</li>
+<li><strong>Número Total de Citaciones:</strong> ~1,200 citaciones (Fuente: Google Scholar / Semantic Scholar / Litmaps).</li>
+<li><strong>Año de Publicación:</strong> 1992.</li>
+<li><strong>Venue de Publicación:</strong> ACM Conference on Object-Oriented Programming Systems, Languages, and Applications (OOPSLA) — Vancouver, Canadá.</li>
+<li><strong>Ranking Oficial:</strong> <strong>CORE A</strong>* (OOPSLA es una conferencia histórica de máxima categoría en Ciencias de la Computación e Ingeniería de Software, integrada actualmente en ACM SPLASH).</li>
+<li><strong>Aporte Original Fundacional:</strong><br />
+  Introdujo formalmente por primera vez la metáfora de la <strong>"Deuda Técnica" (Technical Debt)</strong>. Cunningham comparó la decisión de liberar código rápido e imperfecto con incurrir en un préstamo financiero: permite acelerar el aprendizaje y la entrega inicial de valor, pero acumula un pasivo que devenga "intereses" en forma de mayor esfuerzo y lentitud en desarrollos futuros hasta que la deuda sea amortizada (<em>repaid</em>) mediante refactorización.</li>
+<li><strong>Conexión con los Papers de la Actividad 1:</strong><br />
+  Constituye la raíz conceptual obligatoria citada directa o indirectamente por el 100% de la literatura de TD analizada. En nuestra muestra de 10 papers, fundamenta explícitamente la taxonomía y el modelo de costo de:</li>
+<li><span class="paper-tag">[P03]</span> (<em>Recupito et al., 2024</em>): Para extrapolar la metáfora clásica de deuda hacia los nuevos pasivos de arquitectura y modelos en sistemas con IA (<em>AI-enabled systems</em>).</li>
+<li><span class="paper-tag">[P04]</span> (<em>Shivashankar et al., 2025</em>): Como justificación del impacto económico y operativo que exige clasificar 13 tipos de TD en tickets de incidencias.</li>
+<li><span class="paper-tag">[P08]</span> (<em>Arcelli Fontana et al., 2025</em>): Como base conceptual para categorizar la deuda técnica autoadmitida (SATD) en comentarios de código fuente.</li>
+<li><span class="paper-tag">[P01]</span> (<em>Sheikhaei et al., 2026</em>): Para definir la amortización automática (<em>repayment</em>) de deuda en repositorios GitHub.</li>
+<li><strong>Relación con Nuestra Investigación:</strong><br />
+  Nuestro trabajo extiende y reorienta críticamente los postulados de Cunningham: mientras que el modelo de 1992 concebía la deuda como una decisión deliberada y temporal asumible en código pequeño, en el desarrollo ágil actual asistido por IA, la deuda se introduce de forma involuntaria, silenciosa y masiva. Por tanto, nuestra investigación traslada la mitigación desde el pago reactivo posterior (<em>repayment post-hoc</em>) hacia la <strong>prevención temprana en la fase de planificación (Shift-Left)</strong>, garantizando que el diseño arquitectónico y los criterios BDD no nazcan endeudados.</li>
+</ul>
+<h3>Ficha de Paper Seminal #2: Fundamento Tecnológico (LLMs Aplicados a Código)</h3>
+<ul>
+<li><strong>Referencia Completa (Formato IEEE):</strong><br />
+  M. Chen, J. Tworek, H. Jun, Q. Yuan, H. P. de Oliveira Pinto, J. Kaplan, H. Edwards, Y. Burda, N. Joseph, G. Brockman, et al., "Evaluating Large Language Models Trained on Code," <em>arXiv preprint arXiv:2107.03374</em>, pp. 1–40, Jul. 2021.</li>
+<li><strong>Número Total de Citaciones:</strong> &gt;14,200 citaciones (Fuente: Google Scholar / Semantic Scholar / Litmaps).</li>
+<li><strong>Año de Publicación:</strong> 2021.</li>
+<li><strong>Venue de Publicación:</strong> arXiv / OpenAI Technical Report (Base fundacional de OpenAI Codex y GitHub Copilot).</li>
+<li><strong>Ranking Oficial:</strong> <strong>Publicación de Impacto Global Excepcional</strong> (Pre-print fundacional citado y validado universalmente en foros CORE A* y Scimago Q1 como IEEE TSE, ACM TOSEM, ICSE, FSE y ASE).</li>
+<li><strong>Aporte Original Fundacional:</strong><br />
+  Presentó <strong>Codex</strong>, un modelo de lenguaje autorregresivo especializado ajustado sobre 159 GB de código fuente de 54 millones de repositorios de GitHub. Estableció el protocolo de evaluación estándar de la industria mediante el benchmark <strong>HumanEval</strong> (164 problemas de programación con pruebas unitarias) y formalizó la métrica probabilística $pass@k$ para cuantificar rigurosamente la capacidad de los LLMs para generar programas funcionalmente correctos a partir de docstrings en lenguaje natural.</li>
+<li><strong>Conexión con los Papers de la Actividad 1:</strong><br />
+  Es la referencia tecnológica pionera que habilitó el empleo de LLMs para ingeniería de software en 5 de nuestros 10 papers:</li>
+<li><span class="paper-tag">[P01]</span> (<em>Sheikhaei et al., 2026</em>): Utiliza las capacidades generativas demostradas por Codex/LLMs para intentar resolver automáticamente comentarios SATD.</li>
+<li><span class="paper-tag">[P05]</span> (<em>Almanasra et al., 2026</em>): Toma el paradigma de evaluación de código de Chen et al. y lo extiende para comparar ChatGPT-4o y DeepSeek-R1 bajo métricas ISO 25010.</li>
+<li><span class="paper-tag">[P08]</span> (<em>Arcelli Fontana et al., 2025</em>): Aplica la comprensión de lenguaje y código de LLMs para clasificar deuda técnica sin requerir ingeniería manual de características.</li>
+<li><span class="paper-tag">[P09]</span> (<em>Pizarro et al., 2026</em>): Evalúa la robustez y derivas de los modelos derivados de Codex en entornos de pruebas industriales.</li>
+<li><span class="paper-tag">[P10]</span> (<em>Ahlgren et al., 2025</em>): Aprovecha la interacción dialógica de los LLMs para asistir a fundadores no técnicos en el diseño de software.</li>
+<li><strong>Relación con Nuestra Investigación:</strong><br />
+  Nuestra investigación adapta y complementa los descubrimientos de Chen et al. (2021): si bien Codex demostró que los LLMs pueden sintetizar funciones aisladas, estudios recientes evidencian que su generación sin restricciones carece de visión arquitectónica y produce deuda técnica oculta. Nuestra propuesta incorpora <strong>guardrails de diseño, validación sintáctica BDD y ejecución dialógica socrática</strong> en la fase de refinamiento ágil, logrando que el potencial generativo de los LLMs sea guiado de forma disciplinada y sostenible.</li>
+</ul>
+    </main>
+  </div>
+
+</body>
+</html>

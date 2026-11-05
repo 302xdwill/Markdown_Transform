@@ -1,0 +1,13 @@
+# Entorno virtual
+.venv/
+venv/
+env/
+
+# Archivos de compilación temporal de PyInstaller y Python
+build/
+__pycache__/
+*.py[cod]
+*$py.class
+*~
+.DS_Store
+Thumbs.db

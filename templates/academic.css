@@ -1,0 +1,635 @@
+/* ==========================================================================
+   ESTILO ACADÉMICO PROFESIONAL — UNIVERSIDAD PERUANA UNIÓN (UPeU)
+   Fidelidad tipográfica y maquetación de entregables de investigación
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-blue: #164e87;
+  --primary-blue-dark: #0f3966;
+  --primary-blue-light: #eff6ff;
+  --text-dark: #1e293b;
+  --text-muted: #64748b;
+  --text-light: #475569;
+  --border-color: #cbd5e1;
+  --border-light: #e2e8f0;
+  --bg-zebra: #f8fafc;
+  --bg-control-zebra: #f4f8fb;
+  --font-main: 'Segoe UI', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI Emoji', sans-serif;
+  --font-mono: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+}
+
+/* ==========================================================================
+   Configuración General y Tipografía
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #f1f5f9;
+  color: var(--text-dark);
+  font-family: var(--font-main);
+  font-size: 9.8pt;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Contenedor tipo Hoja A4 para vista en navegador */
+.document-container {
+  max-width: 210mm;
+  min-height: 297mm;
+  margin: 25px auto 40px auto;
+  background: #ffffff;
+  padding: 22mm 20mm;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
+  position: relative;
+  border-radius: 3px;
+}
+
+/* ==========================================================================
+   Títulos y Encabezados
+   ========================================================================== */
+
+.main-title {
+  color: var(--primary-blue);
+  font-size: 18.5pt;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.25;
+  margin: 0 0 18px 0;
+  letter-spacing: -0.2px;
+  word-spacing: 0.5px;
+}
+
+h1 {
+  color: var(--primary-blue);
+  font-size: 14pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  padding-bottom: 4px;
+  border-bottom: 1.5px solid var(--border-light);
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+h2 {
+  color: #0f172a;
+  font-size: 11pt;
+  font-weight: 700;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+h3 {
+  color: var(--text-dark);
+  font-size: 10pt;
+  font-weight: 600;
+  margin-top: 14px;
+  margin-bottom: 6px;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+h4, h5, h6 {
+  color: var(--text-light);
+  font-size: 9.5pt;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 4px;
+}
+
+p {
+  margin: 0 0 10px 0;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+a {
+  color: #1a56db;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+strong, b {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+em, i {
+  font-style: italic;
+}
+
+/* ==========================================================================
+   Cabecera de Control del Entregable (Tabla de Metadatos)
+   ========================================================================== */
+
+.control-header-section {
+  margin-bottom: 24px;
+}
+
+.control-header-title {
+  color: #0f172a;
+  font-size: 11pt;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+}
+
+.metadata-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-size: 8.8pt;
+  line-height: 1.4;
+}
+
+.metadata-table th {
+  background-color: var(--primary-blue);
+  color: #ffffff;
+  font-weight: 700;
+  text-align: left;
+  padding: 7px 12px;
+  border: 1px solid var(--primary-blue);
+  letter-spacing: 0.2px;
+}
+
+.metadata-table td {
+  padding: 6.5px 12px;
+  border: 1px solid #d2dce8;
+  vertical-align: middle;
+}
+
+.metadata-table td.meta-key,
+.metadata-table td:first-child {
+  font-weight: 700;
+  color: #0f172a;
+  width: 25%;
+  background-color: #ffffff;
+  white-space: nowrap;
+}
+
+.metadata-table td.meta-val,
+.metadata-table td:nth-child(2) {
+  color: #334155;
+  width: 75%;
+}
+
+.metadata-table tr:nth-child(even) td {
+  background-color: var(--bg-control-zebra);
+}
+
+/* ==========================================================================
+   Índice de Contenido
+   ========================================================================== */
+
+.toc-card {
+  margin: 15px 0 25px 0;
+}
+
+.toc-header {
+  border-left: 5px solid var(--primary-blue);
+  padding-left: 12px;
+  margin-bottom: 14px;
+}
+
+.toc-header h2, .toc-header .toc-title {
+  color: var(--primary-blue);
+  font-size: 13.5pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.toc-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.toc-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 3.5px 0;
+  font-size: 9.3pt;
+  line-height: 1.35;
+}
+
+.toc-item.level-1 {
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 6px;
+}
+
+.toc-item.level-2 {
+  padding-left: 18px;
+  color: #334155;
+  font-weight: 400;
+}
+
+.toc-item.level-3 {
+  padding-left: 36px;
+  color: #475569;
+  font-size: 9pt;
+}
+
+.toc-page {
+  color: var(--text-muted);
+  font-weight: 400;
+  font-size: 8.8pt;
+  white-space: nowrap;
+  margin-left: 10px;
+}
+
+/* ==========================================================================
+   Tablas Académicas Generales (Catálogo, Matriz, Comparativas)
+   ========================================================================== */
+
+table:not(.metadata-table) {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0 12px 0;
+  font-size: 8.1pt;
+  line-height: 1.3;
+}
+
+table:not(.metadata-table) thead tr {
+  background-color: var(--primary-blue);
+  color: #ffffff;
+}
+
+table:not(.metadata-table) th {
+  padding: 5.5px 7px;
+  font-weight: 700;
+  border: 1px solid var(--primary-blue);
+  text-align: left;
+  vertical-align: middle;
+}
+
+table:not(.metadata-table) td {
+  padding: 4.5px 6px;
+  border: 1px solid var(--border-color);
+  vertical-align: top;
+  color: var(--text-dark);
+}
+
+table:not(.metadata-table) tbody tr:nth-child(even) td {
+  background-color: var(--bg-zebra);
+}
+
+/* Tablas permiten dividirse entre páginas; encabezados se repiten */
+table {
+  page-break-inside: auto;
+  break-inside: auto;
+}
+
+thead {
+  display: table-header-group;
+}
+
+tbody {
+  display: table-row-group;
+}
+
+/* Filas normales no se parten a la mitad entre páginas; filas extensas (.allow-break) sí fluyen */
+table tr:not(.allow-break) {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+table tr.allow-break {
+  page-break-inside: auto !important;
+  break-inside: auto !important;
+}
+
+/* Primera columna centrada si es numeración */
+table:not(.metadata-table) td:first-child,
+table:not(.metadata-table) th:first-child {
+  text-align: center;
+}
+
+/* ==========================================================================
+   Listas y Elementos Estructurados
+   ========================================================================== */
+
+ul, ol {
+  margin: 4px 0 10px 0;
+  padding-left: 22px;
+}
+
+li {
+  margin-bottom: 3.5px;
+  line-height: 1.45;
+}
+
+ul ul {
+  list-style-type: circle;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+ul ul ul {
+  list-style-type: square;
+}
+
+/* ==========================================================================
+   Etiquetas de Artículos, Badges y Citas
+   ========================================================================== */
+
+.paper-tag, .badge {
+  display: inline-block;
+  background-color: #eff6ff;
+  color: var(--primary-blue);
+  border: 1px solid #bfdbfe;
+  font-weight: 600;
+  padding: 0.5px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  white-space: nowrap;
+}
+
+.badge-success {
+  background-color: #ecfdf5;
+  color: #065f46;
+  border-color: #a7f3d0;
+}
+
+.badge-warning {
+  background-color: #fffbeb;
+  color: #92400e;
+  border-color: #fde68a;
+}
+
+/* ==========================================================================
+   Imágenes y Gráficos
+   ========================================================================== */
+
+.image-container {
+  display: block;
+  text-align: center;
+  margin: 14px 0;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+img {
+  max-width: 90%;
+  max-height: 85mm;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 4px;
+  display: block;
+  margin: 6px auto;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.image-caption {
+  font-size: 8.5pt;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* ==========================================================================
+   Bloques de Código y Citas
+   ========================================================================== */
+
+pre {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid var(--primary-blue);
+  border-radius: 4px;
+  padding: 10px 14px;
+  font-family: var(--font-mono);
+  font-size: 8.5pt;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.45;
+  margin: 10px 0;
+  page-break-inside: auto;
+  break-inside: auto;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background-color: #f1f5f9;
+  padding: 1px 4px;
+  border-radius: 3px;
+  color: #0f172a;
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+blockquote {
+  border-left: 3.5px solid var(--primary-blue);
+  padding: 6px 14px;
+  margin: 10px 0;
+  background-color: #f8fafc;
+  color: #334155;
+  font-style: italic;
+  page-break-inside: auto;
+  break-inside: auto;
+}
+
+/* ==========================================================================
+   Callouts y Alertas Estilo Académico
+   ========================================================================== */
+
+.callout {
+  border-left: 4px solid var(--primary-blue);
+  background-color: #f8fafc;
+  padding: 10px 14px;
+  margin: 12px 0;
+  border-radius: 0 4px 4px 0;
+  page-break-inside: auto;
+  break-inside: auto;
+}
+
+.callout-title {
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: 4px;
+  font-size: 9.5pt;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+.callout.callout-tip {
+  border-left-color: #10b981;
+}
+.callout.callout-warning {
+  border-left-color: #f59e0b;
+}
+.callout.callout-important {
+  border-left-color: #ef4444;
+}
+
+/* ==========================================================================
+   Saltos de Página (Page Breaks)
+   ========================================================================== */
+
+.page-break {
+  page-break-before: always;
+  break-before: page;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.page-break-before {
+  page-break-before: always !important;
+  break-before: page !important;
+  margin-top: 0 !important;
+}
+
+/* ==========================================================================
+   Barra de Acciones Superior en HTML (Sólo en Pantalla)
+   ========================================================================== */
+
+.screen-action-bar {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #cbd5e1;
+  padding: 10px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.screen-action-bar .brand {
+  font-weight: 700;
+  color: var(--primary-blue);
+  font-size: 13pt;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.screen-action-bar .btn-group {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-action {
+  background-color: var(--primary-blue);
+  color: #ffffff;
+  border: none;
+  padding: 7px 15px;
+  border-radius: 4px;
+  font-size: 9pt;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.15s ease;
+}
+
+.btn-action:hover {
+  background-color: var(--primary-blue-dark);
+}
+
+.btn-action.btn-secondary {
+  background-color: #e2e8f0;
+  color: #1e293b;
+}
+
+.btn-action.btn-secondary:hover {
+  background-color: #cbd5e1;
+}
+
+/* ==========================================================================
+   Estilos Específicos para Impresión / Conversión a PDF
+   ========================================================================== */
+
+@page {
+  size: A4 portrait;
+  margin: 20mm 18mm 20mm 18mm;
+}
+
+@media print {
+  html, body {
+    background-color: #ffffff !important;
+    font-size: 9.5pt;
+  }
+
+  .screen-action-bar {
+    display: none !important;
+  }
+
+  .document-container {
+    max-width: 100% !important;
+    min-height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  /* Asegurar fidelidad de colores de fondo en tablas */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  table {
+    page-break-inside: auto !important;
+    break-inside: auto !important;
+  }
+
+  table tr:not(.allow-break) {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  table tr.allow-break {
+    page-break-inside: auto !important;
+    break-inside: auto !important;
+  }
+
+  pre, blockquote, .callout {
+    page-break-inside: auto !important;
+    break-inside: auto !important;
+  }
+
+  h1, h2, h3 {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+
+  .page-break, .page-break-before {
+    page-break-before: always !important;
+    break-before: page !important;
+  }
+}
