@@ -16,85 +16,11 @@ import tempfile
 import time
 import urllib.request
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, Optional
 
 import aiohttp
 
 from src.config import DEFAULT_AUTHOR_FOOTER, find_browser_executable
-
-
-def _strip_blank_pdf_pages(pdf_bytes: bytes) -> bytes:
-    """
-    Verifica el PDF generado y elimina cualquier página que haya quedado en blanco
-    en medio o al final del documento (es decir, páginas que solo contienen la cabecera
-    y el pie de página corridos, sin texto, tablas ni imágenes en el área de cuerpo).
-    """
-    try:
-        import pymupdf
-    except ImportError:
-        try:
-            import fitz as pymupdf
-        except ImportError:
-            return pdf_bytes
-
-    try:
-        doc = pymupdf.open(stream=pdf_bytes, filetype="pdf")
-        if len(doc) <= 1:
-            doc.close()
-            return pdf_bytes
-
-        blank_indices: List[int] = []
-        for idx, page in enumerate(doc):
-            h = page.rect.height
-            # La cabecera está en y < 50pt y el pie de página en y > (h - 54pt) (~788pt en A4)
-            top_bound = 50.0
-            bottom_bound = h - 54.0
-
-            # 1. Revisar palabras dentro del área del cuerpo
-            words = page.get_text_words()
-            body_words = [w for w in words if w[3] > top_bound and w[1] < bottom_bound and str(w[4]).strip()]
-            if body_words:
-                continue
-
-            # 2. Revisar imágenes dentro del área del cuerpo
-            has_body_image = False
-            for img_info in page.get_images(full=True):
-                xref = img_info[0]
-                for rect in page.get_image_rects(xref):
-                    if rect.y1 > top_bound and rect.y0 < bottom_bound and rect.width > 5 and rect.height > 5:
-                        has_body_image = True
-                        break
-                if has_body_image:
-                    break
-            if has_body_image:
-                continue
-
-            # 3. Revisar gráficos vectoriales / tablas significativas en el área del cuerpo
-            has_body_drawing = False
-            for d in page.get_drawings():
-                r = d.get("rect")
-                if r and r.y1 > top_bound and r.y0 < bottom_bound and (r.width > 10 or r.height > 10):
-                    has_body_drawing = True
-                    break
-            if has_body_drawing:
-                continue
-
-            blank_indices.append(idx)
-
-        # Si no hay páginas en blanco o todas parecieran en blanco, devolver intacto
-        if not blank_indices or len(blank_indices) >= len(doc):
-            doc.close()
-            return pdf_bytes
-
-        # Eliminar páginas en blanco en orden inverso
-        for idx in reversed(blank_indices):
-            doc.delete_page(idx)
-
-        out_bytes = doc.tobytes(garbage=3, deflate=True)
-        doc.close()
-        return out_bytes
-    except Exception:
-        return pdf_bytes
 
 
 def get_free_port() -> int:
@@ -212,11 +138,20 @@ async def _generate_pdf_via_cdp(
                     // Convertir cualquier .page-break remanente en clase page-break-before del siguiente hermano
                     body.querySelectorAll('.page-break').forEach(pb => {
                         let next = pb.nextElementSibling;
+                        while (next && next.tagName === 'HR') {
+                            const toRemove = next;
+                            next = next.nextElementSibling;
+                            toRemove.remove();
+                        }
                         if (next) {
                             next.classList.add('page-break-before');
                         }
                         pb.remove();
                     });
+                    // Eliminar nodos vacíos al final de .doc-body que pudieran causar una hoja final en blanco
+                    while (body.lastElementChild && !body.lastElementChild.textContent.trim() && !body.lastElementChild.querySelector('img, svg, table, hr')) {
+                        body.lastElementChild.remove();
+                    }
                     // Si no hay cabecera de control antes de .doc-body, el primer hijo nunca debe forzar salto de página
                     const header = document.querySelector('.doc-header');
                     if (!header && body.firstElementChild) {
@@ -267,7 +202,6 @@ async def _generate_pdf_via_cdp(
                     raise RuntimeError("No se recibieron datos de PDF desde el motor de renderizado.")
 
                 pdf_bytes = base64.b64decode(pdf_data_b64)
-                pdf_bytes = _strip_blank_pdf_pages(pdf_bytes)
                 with open(output_pdf_path, "wb") as f:
                     f.write(pdf_bytes)
 

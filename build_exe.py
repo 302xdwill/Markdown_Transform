@@ -50,6 +50,9 @@ def build():
         "--hidden-import=pygments",
         "--hidden-import=pygments.lexers",
         "--hidden-import=pygments.formatters",
+        "--exclude-module=pymupdf",
+        "--exclude-module=fitz",
+        "--exclude-module=numpy",
         str(main_script)
     ]
 
